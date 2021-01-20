@@ -4,9 +4,9 @@ const refs = {
   themeSwitch: document.querySelector('.theme-switch__toggle'),
 };
 refs.body.classList = localStorage.getItem('theme');
-refs.themeSwitch.checked = refs.body.classList.contains('light-theme')
-  ? false
-  : true;
+refs.themeSwitch.checked = refs.body.classList.contains(theme.DARK)
+  ? true
+  : false;
 refs.themeSwitch.addEventListener('input', changeThemeHandler);
 function changeThemeHandler() {
   if (refs.themeSwitch.checked) {
