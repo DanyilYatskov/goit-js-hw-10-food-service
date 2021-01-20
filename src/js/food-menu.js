@@ -1,7 +1,7 @@
 import foodMenuList from '../menu.json';
 import foodMenuTemplate from '../templates/food-menu.hbs';
-
-const menuMarkup = foodMenuTemplate(foodMenuList);
-//console.log(menuMarkup);
+function renderMarkup(itemList, template, ref) {
+  ref.insertAdjacentHTML('beforeend', template(itemList));
+}
 const foodMenuRef = document.querySelector('.js-menu');
-foodMenuRef.insertAdjacentHTML('beforeend', menuMarkup);
+renderMarkup(foodMenuList, foodMenuTemplate, foodMenuRef);
